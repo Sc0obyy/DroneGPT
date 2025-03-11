@@ -26,17 +26,20 @@ The app sends ChatGPT a prompt that contains the available API library, which is
 
 To run this project, you will need to add the following environment variables in [the gradle.properties file](https://github.com/L3S/DroneGPT/blob/dev-sdk-main/SampleCode-V5/android-sdk-v5-as/gradle.properties).
 
-- `DJI_MSDK_API_KEY`: can be obtained for free by creating a [DJI developer account and applying for a key](https://developer.dji.com/user/apps/#all). **Please note** that you have to enter "com.dji.sampleV5.aircraft" as "Package name" when creating the key.
+- `AIRCRAFT_API_KEY`: can be obtained for free by creating a [DJI developer account and applying for a key](https://developer.dji.com/user/apps/#all). **Please note** that you have to enter "com.dji.sampleV5.aircraft" as "Package name" when creating the key.
 
 - `OPENAI_API_KEY`: can be created in OpenAI's [API Keys dashboard](https://platform.openai.com/api-keys).
 
 
 
 ### Build
-1. From Android Studio sync gradle project.
-2. Pair your Android device over wifi.
-3. Click "Run" on Android Studio
-4. Connect the Android device with the DJI Remote Controller
+1. Download or clone the project.
+2. Import the project from `DroneGPT/SampleCode-V5/android-sdk-v5-as/build.gradle`.
+3. Change the environment variables as described above.
+4. From Android Studio sync gradle project.
+5. Enable developer mode on your Android device and Pair it over wifi or USB.
+6. Click "Run" on Android Studio
+7. Connect the Android device with the DJI Remote Controller
     
 
 
@@ -48,6 +51,15 @@ To run this project, you will need to add the following environment variables in
 
 Since this app was developed for a research paper, flights are conducted by creating surveillance "experiments" and defining the allowed flight area for ChatGPT.
 To mitigate safety risks, ChatGPT's control of the drone is limited to horizontal movements. Therefore, takeoff, landing and vertical throlttling commands are excluded from ChatGPT's API.
+
+### Pairing the drone for the first time
+
+1. Turn on the drone and let it calibrate.
+2. Turn on the DJI remote controller.
+3. Make sure that the DJI remote controller is paired with the phone and all actions are allowed.
+4. Navigate to `DEFAULT OPTIONS > Settings (three points top right) > Remote Controller settings`.
+5. Click `Link to Aircraft`. A beeping sound should indicate pairing mode.
+6. Press and hold the drone's power button for about 10s, the drone should pair and a the video feed should appear on the phone.
 
 > [!TIP]
 > Before proceeding with the steps below for the first time, test the drone's connectivity by conducting a manual flight in the "Default Layout" from the app's home screen.
