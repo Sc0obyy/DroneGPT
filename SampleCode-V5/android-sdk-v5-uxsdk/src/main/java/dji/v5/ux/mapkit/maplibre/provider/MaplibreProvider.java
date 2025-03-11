@@ -34,7 +34,7 @@ public class MaplibreProvider extends MapProvider {
         final int mapType = mapkitOptions.getMapType();
         Mapkit.mapType(mapType);
         Mapkit.mapProvider(providerType);
-        Mapbox.getInstance(context.getApplicationContext(), Mapkit.getMapboxAccessToken());
+        Mapbox.getInstance(context.getApplicationContext());
         MapboxMapOptions options = MapboxMapOptions.createFromAttributes(context);
         options.textureMode(true);
         options.attributionGravity(Gravity.BOTTOM | Gravity.RIGHT);

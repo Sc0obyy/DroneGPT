@@ -140,9 +140,9 @@ fun fromDJICameraUpdate(cameraUpdate: DJICameraUpdate, cameraPosition: CameraPos
 
 fun fromMapType(mapType: DJIMap.MapType): String {
     return when (mapType) {
-        DJIMap.MapType.NORMAL -> Style.MAPBOX_STREETS
-        DJIMap.MapType.HYBRID -> Style.SATELLITE_STREETS
-        DJIMap.MapType.SATELLITE -> Style.SATELLITE
+        DJIMap.MapType.NORMAL -> "mapbox://styles/mapbox/streets-v12"
+        DJIMap.MapType.HYBRID -> "mapbox://styles/mapbox/satellite-streets-v12"
+        DJIMap.MapType.SATELLITE -> "mapbox://styles/mapbox/satellite-v9"
         else -> throw IllegalArgumentException("$mapType is not implemented")
     }
 }

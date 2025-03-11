@@ -39,10 +39,10 @@ class MaplibreMapView @JvmOverloads constructor(
 
     private fun getMapboxStyle(): String {
         return when (Mapkit.getMapType()) {
-            DJIMap.MAP_TYPE_NORMAL -> Style.MAPBOX_STREETS
-            DJIMap.MAP_TYPE_HYBRID -> Style.SATELLITE_STREETS
-            DJIMap.MAP_TYPE_SATELLITE -> Style.SATELLITE
-            else -> Style.MAPBOX_STREETS
+            DJIMap.MAP_TYPE_NORMAL -> "mapbox://styles/mapbox/streets-v12"
+            DJIMap.MAP_TYPE_HYBRID -> "mapbox://styles/mapbox/satellite-streets-v12"
+            DJIMap.MAP_TYPE_SATELLITE -> "mapbox://styles/mapbox/satellite-v9"
+            else -> "mapbox://styles/mapbox/streets-v12"
         }
     }
 }

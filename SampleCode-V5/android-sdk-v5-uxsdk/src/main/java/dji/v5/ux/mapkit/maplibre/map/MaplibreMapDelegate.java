@@ -730,14 +730,14 @@ public class MaplibreMapDelegate extends DJIBaseMap implements DJIMap,
         clearSourcesAndLayers();
         switch (type) {
             case DJIMap.MAP_TYPE_SATELLITE:
-                mapboxMap.setStyle(Style.SATELLITE, this);
+                mapboxMap.setStyle("mapbox://styles/mapbox/satellite-v9", this);
                 break;
             case DJIMap.MAP_TYPE_HYBRID:
-                mapboxMap.setStyle(Style.SATELLITE_STREETS, this);
+                mapboxMap.setStyle("mapbox://styles/mapbox/satellite-streets-v12", this);
                 break;
             case DJIMap.MAP_TYPE_NORMAL:
             default:
-                mapboxMap.setStyle(Style.MAPBOX_STREETS, this);
+                mapboxMap.setStyle("mapbox://styles/mapbox/streets-v12", this);
         }
     }
 
@@ -747,16 +747,16 @@ public class MaplibreMapDelegate extends DJIBaseMap implements DJIMap,
         clearSourcesAndLayers();
         switch (type) {
             case NORMAL:
-                mapboxMap.setStyle(Style.MAPBOX_STREETS, this);
+                mapboxMap.setStyle("mapbox://styles/mapbox/streets-v12", this);
                 break;
             case SATELLITE:
-                mapboxMap.setStyle(Style.SATELLITE, this);
+                mapboxMap.setStyle("mapbox://styles/mapbox/satellite-v9", this);
                 break;
             case HYBRID:
-                mapboxMap.setStyle(Style.SATELLITE_STREETS, this);
+                mapboxMap.setStyle("mapbox://styles/mapbox/satellite-streets-v12", this);
                 break;
             default:
-                mapboxMap.setStyle(Style.MAPBOX_STREETS, this);
+                mapboxMap.setStyle("mapbox://styles/mapbox/streets-v12", this);
         }
     }
 
