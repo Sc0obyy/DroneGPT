@@ -68,6 +68,7 @@ object ChatGPTUtility {
         - The drone must stay within designated boundaries, which for this task is a $areaDescription
         - The total flight duration must not exceed $flightDuration minutes.
         - The drone will maintain a constant height of $flightHeight meters, has a gimbal with a pitch angle of $gimbalAngle degrees and a $cameraFOV FOV camera, which influence the frequency of photo captures.
+        Note that the camera FOV of $cameraFOV refers only to the horizontal FOV. The drone can only capture images in an aspect ratio of 16:9. The resulting photos should be square, thus cropping the edges. The Photo will cover roughly 19x19m of area.
 
         Functions:
         - `adjust_flight_parameters(xVelocity, yVelocity, yaw)`: controls the drone's flight direction. `xVelocity` with value range [$minPitchRollValue, $maxPitchRollValue] controls velocity along the x-axis (positive values move the drone east, negative west), and `yVelocity` with value range [$minPitchRollValue, $maxPitchRollValue] controls velocity along the y-axis (positive values move the drone north, negative south). `yaw` with value range [$minYawValue, $maxYawValue] changes the drone's angular velocity (positive values rotate the drone clockwise, negative counterclockwise)
