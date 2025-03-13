@@ -1,5 +1,8 @@
 package com.l3s.dronegpt.ui.fragment
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -168,6 +171,12 @@ class ChatFragment : Fragment() {
                 }
             }
             setNegativeButton("cancel", null)
+            setNeutralButton("Copy") {_, _ ->
+                val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("Extracted Script", script)
+                clipboard.setPrimaryClip(clip)
+                ToastUtils.showToast("Script copied to clipboard")
+            }
             show()
         }
     }
